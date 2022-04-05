@@ -1,0 +1,41 @@
+// global-style.ts
+import { createGlobalStyle } from "styled-components";
+import { reset } from "styled-reset";
+
+// 외부에서 import 할거니까 모듈 내보내자~!
+export const GlobalStyle = createGlobalStyle`
+  ${reset}
+  a{
+    text-decoration: none;
+    color: inherit;
+}
+*{
+    box-sizing: border-box;
+}
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, 
+a, dl, dt, dd, ol, ul, li, form, label, table{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 10px;
+    vertical-align: baseline;
+}
+body{
+    line-height: 1;
+    font-family: 'Noto Sans KR',  sans-serif;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+body::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
+}
+ol, ul{
+    list-style: none;
+}
+button {
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+}
+  /* 그밖에 글로벌 스타일 작성하기  */
+`;
