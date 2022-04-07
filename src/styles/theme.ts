@@ -18,6 +18,12 @@ export const fontSize = {
 export const theme = {
   mainColor: "#1565C0",
   fontColor: "#323D45",
+  lightGray: "#939FA5",
+  blueColor: "#2196F3",
+  lightBlueColor: "#BBDEFB",
+  yellowColor: "#ffa000",
+  grayColor: "#C2C2C2",
+  lightGrayColor: "#F5F5F5",
   device,
   fontSize,
 };
