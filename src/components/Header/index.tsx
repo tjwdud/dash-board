@@ -1,4 +1,5 @@
 import React from "react";
+import { MainText } from "styles/text";
 import {
   HeaderContainer,
   HeaderImg,
@@ -7,8 +8,6 @@ import {
   Profile,
   Divider,
 } from "./style";
-
-import { MainText } from "../Text/style";
 
 function Header() {
   return (
