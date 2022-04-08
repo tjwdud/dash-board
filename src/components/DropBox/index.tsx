@@ -1,6 +1,5 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Text14 } from "styles/text";
-import CheckBoxContainer from "components/CheckBox";
 import useOutSideRef from "hooks/useOutSideRef";
 import {
   DropDownContainer,
@@ -20,14 +19,26 @@ interface Props {
   content: {
     title: string;
     menus: EnumMenusItem[];
-    onChange: (event: React.FormEvent<HTMLInputElement>) => void;
+    dropState: string[];
+    setDropState: React.Dispatch<React.SetStateAction<string[]>>;
   };
 }
 function DropBox({ content }: Props) {
   const { selected, clickRef, onToggle } = useOutSideRef();
-  const { title, menus, onChange } = content;
+
+  const { title, menus, dropState, setDropState } = content;
+
   const dropDownBtnHandler = () => {
     onToggle();
+  };
+
+  const checkHandler = (event: React.FormEvent<HTMLInputElement>) => {
+    const { name, checked } = event.target as HTMLInputElement;
+    if (checked) {
+      setDropState([...dropState, name]);
+      return;
+    }
+    setDropState(dropState.filter((option) => option !== name));
   };
 
   return (
@@ -37,7 +48,10 @@ function DropBox({ content }: Props) {
         fontNum={title.length}
         onClick={dropDownBtnHandler}
       >
-        <Text selected={selected}>{title}</Text>
+        <Text selected={selected}>
+          {title}
+          {dropState.length > 0 && `(${dropState.length})`}
+        </Text>
         <Arrow selected={selected} />
       </DropDown>
       {selected && (
@@ -48,8 +62,9 @@ function DropBox({ content }: Props) {
                 <MenuItem key={`${menu.id}-${menu.name}`}>
                   <input
                     type="checkbox"
-                    value={menu.name}
-                    onChange={onChange}
+                    name={menu.name}
+                    onChange={checkHandler}
+                    checked={dropState.includes(menu.name)}
                   />
                   <Text14>{menu.name}</Text14>
                 </MenuItem>
