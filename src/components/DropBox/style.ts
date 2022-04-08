@@ -26,7 +26,7 @@ export const DropDown = styled.div<DropBoxProps>`
   display: flex;
   box-sizing: border-box;
   height: 32px;
-  width: ${({ fontNum }) => (fontNum === 4 ? "98px" : "76px")};
+  width: ${({ fontNum }) => (fontNum === 4 ? "113px" : "91px")};
   align-items: center;
   padding: 4px 12px;
   border-radius: 4px;
@@ -55,6 +55,7 @@ export const MenuBox = styled.div`
   border-radius: 4px;
   position: absolute;
   top: 36px;
+  z-index: 5;
 `;
 export const MenuWrapper = styled.div`
   margin: 16px 12px;
