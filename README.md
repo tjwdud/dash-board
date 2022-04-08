@@ -8,15 +8,25 @@
 
 <br>
 
-2. 클론한 디렉토리에서 module 설치
+2. 디렉토리 이동
+
+   ```
+   cd coding-test
+   ```
+   
+
+<br>
+
+3. 클론한 디렉토리에서 module 설치
 
    ```
    npm install
    ```
 
+
 <br>
 
-3. 서버 실행
+4. 서버 실행
 
    ```
    npm run server
@@ -24,7 +34,7 @@
 
 <br>
 
-4. client 실행
+5. client 실행
 
    ```
    npm run start
