@@ -7,7 +7,6 @@ export const MenuContainer = styled.div`
   left: 0;
   bottom: 0;
   width: 100%;
-
   z-index: 10;
   position: fixed;
   background-color: rgba(50, 61, 69, 0.5);
@@ -18,7 +17,6 @@ export const MenuBody = styled.div`
   height: 100%;
   opacity: 1;
   left: 0;
-  // position: fixed;
   z-index: 10000;
   background-color: white;
   transform: ${({ open }: { open: boolean }) =>

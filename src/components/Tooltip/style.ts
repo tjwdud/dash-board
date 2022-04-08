@@ -1,8 +1,5 @@
 import styled from "styled-components";
-// import { Props } from "./index";
-interface Props {
-  isChecked: boolean;
-}
+
 export const Wrapper = styled.label`
   position: relative;
   display: inline-block;

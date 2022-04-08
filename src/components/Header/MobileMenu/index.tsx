@@ -1,4 +1,4 @@
-import React, { forwardRef, useEffect, useRef } from "react";
+import React from "react";
 import { Divider } from "components/Card/style";
 import { Text14 } from "styles/text";
 import {

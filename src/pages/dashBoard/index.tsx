@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState } from "react";
 import useRequest from "hooks/useRequest";
 import { TitleText, Text16, Text14 } from "styles/text";
 import DropBox from "components/DropBox";
@@ -42,26 +42,7 @@ function DashBoard() {
       setCheckedMaterial([]);
     }
   };
-  // const checkMethodHandler = (event: React.FormEvent<HTMLInputElement>) => {
-  //   const { name, checked } = event.target as HTMLInputElement;
-  //   console.log(name, checked);
-  //   if (checked) {
-  //     setCheckedProcessingMethod([...checkedProcessingMethod, name]);
-  //     return;
-  //   }
-  //   setCheckedProcessingMethod(
-  //     checkedProcessingMethod.filter((option) => option !== name),
-  //   );
-  // };
 
-  // const checkMaterialHandler = (event: React.FormEvent<HTMLInputElement>) => {
-  //   const { name, checked } = event.target as HTMLInputElement;
-  //   if (checked) {
-  //     setCheckedMaterial([...checkedMaterial, name]);
-  //     return;
-  //   }
-  //   setCheckedMaterial(checkedMaterial.filter((option) => option !== name));
-  // };
   const dropBox = [
     {
       title: "가공방식",
@@ -69,7 +50,6 @@ function DashBoard() {
         { id: 0, name: "밀링" },
         { id: 1, name: "선반" },
       ],
-      // onChange: checkMethodHandler,
       dropState: checkedProcessingMethod,
       setDropState: setCheckedProcessingMethod,
     },
@@ -82,14 +62,11 @@ function DashBoard() {
         { id: 3, name: "합금강" },
         { id: 4, name: "강철" },
       ],
-      // onChange: checkMaterialHandler,
+
       dropState: checkedMaterial,
       setDropState: setCheckedMaterial,
     },
   ];
-  // console.log(checkedProcessingMethod);
-  // console.log(checkedMaterial);
-  // console.log("상담중인것", isConsultationChecked);
 
   return (
     <div>
@@ -103,10 +80,7 @@ function DashBoard() {
             {resetActive && <ResetBtn onClick={() => resetHandler()} />}
           </DropBoxWrapper>
           <InConsultationTooltipWrapper>
-            <Tooltip
-              isChecked={isConsultationChecked}
-              onChange={() => toggleHandler()}
-            />
+            <Tooltip onChange={() => toggleHandler()} />
             <Text14>상담 중인 요청만 보기</Text14>
           </InConsultationTooltipWrapper>
         </FilterContainer>
