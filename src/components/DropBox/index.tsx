@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React from "react";
 import { Text14 } from "styles/text";
 import useOutSideRef from "hooks/useOutSideRef";
 import {
@@ -46,7 +46,7 @@ function DropBox({ content }: Props) {
       <DropDown
         selected={selected}
         fontNum={title.length}
-        onClick={dropDownBtnHandler}
+        onClick={() => dropDownBtnHandler()}
       >
         <Text selected={selected}>
           {title}
