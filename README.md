@@ -3,7 +3,7 @@
 1. 레포지토리를 클론하고자 하는 디렉토리에서 아래 명령어를 수행
 
    ```
-   git clone [레포지토리 주소]
+   git clone https://github.com/tjwdud/coding-test.git
    ```
 
 <br>
