@@ -7,6 +7,12 @@ export const Container = styled.div`
   border-radius: 4px;
   width: 366px;
   height: 356px;
+  &:hover {
+    border: 1px solid ${({ theme }) => theme.blueColor};
+  }
+  @media screen and (max-width: 400px) {
+    width: 100%;
+  }
 `;
 
 export const Wrapper = styled.div`
@@ -61,10 +67,14 @@ export const ContentTitle = styled(Text14)`
   height: 20px;
 `;
 
-export const ContentBody = styled(Text14)`
-  font-weight: 700;
+export const ContentBodyWrapper = styled.div`
+  display: flex;
   width: 232px;
   height: 20px;
+`;
+
+export const ContentBody = styled(Text14)`
+  font-weight: 700;
 `;
 
 export const BtnWrapper = styled.div`

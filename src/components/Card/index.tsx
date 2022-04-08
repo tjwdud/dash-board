@@ -2,6 +2,7 @@ import React from "react";
 import { Text14 } from "styles/text";
 import Button from "components/Button";
 import InConsultation from "components/InConsultation";
+import { IRequests } from "types/requestDataType";
 import {
   Container,
   Wrapper,
@@ -13,39 +14,59 @@ import {
   Content,
   ContentTitle,
   ContentBody,
+  ContentBodyWrapper,
   BtnWrapper,
   TitleInConsultationWrapper,
 } from "./style";
 
-function Card() {
+function Card({
+  id,
+  title,
+  client,
+  count,
+  due,
+  amount,
+  material,
+  method,
+  status,
+}: IRequests) {
   return (
     <Container>
       <Wrapper>
         <TitleWrapper>
           <TitleInConsultationWrapper>
-            <Title>자동차 시제품 제작</Title>
-            <InConsultation />
+            <Title>{title}</Title>
+            {status === "상담중" && <InConsultation />}
           </TitleInConsultationWrapper>
-          <Text14>A 고객사</Text14>
+          <Text14>{client}</Text14>
         </TitleWrapper>
-        <DateText>2020.12.14까지 납기</DateText>
+        <DateText>{due}까지 납기</DateText>
         <Divider />
         <ContentsWrapper>
           <Content>
             <ContentTitle>도면개수</ContentTitle>
-            <ContentBody>1개</ContentBody>
+            <ContentBodyWrapper>
+              <ContentBody>{count}개</ContentBody>
+            </ContentBodyWrapper>
           </Content>
           <Content>
             <ContentTitle>총 수량</ContentTitle>
-            <ContentBody>2개</ContentBody>
+            <ContentBodyWrapper>
+              {" "}
+              <ContentBody>{amount}개</ContentBody>
+            </ContentBodyWrapper>
           </Content>
           <Content>
             <ContentTitle>가공방식</ContentTitle>
-            <ContentBody>밀링,선반</ContentBody>
+            <ContentBodyWrapper>
+              <ContentBody>{method.join(", ")}</ContentBody>
+            </ContentBodyWrapper>
           </Content>
           <Content>
             <ContentTitle>재료</ContentTitle>
-            <ContentBody>밀링,선반</ContentBody>
+            <ContentBodyWrapper>
+              <ContentBody>{material.join(", ")}</ContentBody>
+            </ContentBodyWrapper>
           </Content>
         </ContentsWrapper>
         <BtnWrapper>
