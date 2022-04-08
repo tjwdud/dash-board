@@ -21,7 +21,7 @@ function DashBoard() {
     string[]
   >([]);
   const [checkedMaterial, setCheckedMaterial] = React.useState<string[]>([]);
-  const { loading, requests, filterList } = useRequest(
+  const { requests, filterList } = useRequest(
     isConsultationChecked,
     checkedProcessingMethod,
     checkedMaterial,
@@ -84,7 +84,7 @@ function DashBoard() {
             <Text14>상담 중인 요청만 보기</Text14>
           </InConsultationTooltipWrapper>
         </FilterContainer>
-        {!loading && requests.length === 0 ? (
+        {requests.length === 0 ? (
           <EmptyRequestWrapper>
             <EmptyRequestText>
               조건에 맞는 견적 요청이 없습니다.
@@ -92,24 +92,20 @@ function DashBoard() {
           </EmptyRequestWrapper>
         ) : (
           <CardContainer>
-            {!loading ? (
-              requests?.map((request) => (
-                <Card
-                  id={request.id}
-                  key={`${request.id}-${request.title}`}
-                  title={request.title}
-                  client={request.client}
-                  count={request.count}
-                  due={request.due}
-                  amount={request.amount}
-                  material={request.material}
-                  method={request.method}
-                  status={request.status}
-                />
-              ))
-            ) : (
-              <div>로딩중</div>
-            )}
+            {requests?.map((request) => (
+              <Card
+                id={request.id}
+                key={`${request.id}-${request.title}`}
+                title={request.title}
+                client={request.client}
+                count={request.count}
+                due={request.due}
+                amount={request.amount}
+                material={request.material}
+                method={request.method}
+                status={request.status}
+              />
+            ))}
           </CardContainer>
         )}
       </DashBoardContainer>
