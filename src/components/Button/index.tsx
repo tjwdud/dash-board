@@ -1,5 +1,4 @@
 import React from "react";
-// import { btnText } from "styles/text";
 import { ButtonContainer, BtnText } from "./style";
 
 interface Props {

@@ -2,11 +2,8 @@ import styled from "styled-components";
 import { Text14 } from "styles/text";
 
 export const DashBoardContainer = styled.div`
-  // margin-left: 55px;
-  // margin-right: 55px;
   margin-left: auto;
   margin-right: auto;
-  // display: flex;
   margin-top: 40px;
   width: 90%;
   justify-content: center;
@@ -69,14 +66,6 @@ export const CardContainer = styled.div`
   @media screen and (max-width: 1240px) {
     grid-template-columns: repeat(2, 1fr);
   }
-
-  // @media (min-width: 825px) and (max-width: 991px) {
-  //   grid-template-columns: repeat(2, 1fr);
-  // }
-
-  // @media screen and (max-width: 600px) {
-  //   grid-template-columns: repeat(2, 1fr);
-  // }
 
   @media screen and (max-width: 777px) {
     grid-template-columns: repeat(1, 1fr);

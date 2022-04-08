@@ -1,18 +1,9 @@
 export const deviceSizes = {
-  tablet: "640px",
-  laptop: "900px",
   mobile: "455px",
 };
 
 export const device = {
   mobile: `screen and (max-width: ${deviceSizes.mobile})`,
-};
-
-export const fontSize = {
-  superBig: "20px",
-  big: "16px",
-  medium: "14px",
-  small: "12px",
 };
 
 export const theme = {
@@ -26,5 +17,4 @@ export const theme = {
   lightGrayColor: "#F5F5F5",
   backgroundColor: "#E5E5E5",
   device,
-  fontSize,
 };

@@ -1,5 +1,3 @@
-import React from "react";
-
 export interface IRequests {
   id: number;
   title: string;
@@ -10,4 +8,8 @@ export interface IRequests {
   method: string[];
   material: string[];
   status: string;
+}
+
+export interface IRequestsObj {
+  request: IRequests;
 }

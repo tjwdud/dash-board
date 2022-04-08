@@ -15,7 +15,6 @@ export const HeaderContainer = styled.div`
   box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.12), 0px 2px 2px rgba(0, 0, 0, 0.24);
 
   @media ${({ theme }) => theme.device.mobile} {
-    background-color: red;
     height: 44px;
     justify-content: start;
   }
@@ -49,22 +48,18 @@ export const Profile = styled.div`
   margin-right: 40px;
   align-items: center;
   @media screen and (max-width: 455px) {
-    // & > :nth-child(n + 2) {
     display: none;
-    //}
   }
 `;
 export const CompanyIcon = styled(company)`
   height: 15px;
-
   margin-right: 8px;
 `;
 
 export const CompanyName = styled.p`
   font-weight: 500;
-  font-size: ${({ theme }) => theme.fontSize.medium};
+  font-size: 14px;
   line-height: 20px;
-  //   color: white;
 `;
 
 export const Divider = styled(divider)`

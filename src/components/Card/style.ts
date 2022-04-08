@@ -1,4 +1,3 @@
-import { findByLabelText } from "@testing-library/react";
 import styled from "styled-components";
 import { Text16, Text14 } from "styles/text";
 
